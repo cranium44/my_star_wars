@@ -6,16 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
-import live.adabe.mystarwars.R
-import live.adabe.mystarwars.UserAdapter
 import live.adabe.mystarwars.databinding.HomeFragmentBinding
+import live.adabe.mystarwars.navigation.NavigationService
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
+    @Inject
+    lateinit var navigationService: NavigationService
 
     private lateinit var userAdapter: UserAdapter
     private lateinit var viewModel: HomeViewModel
@@ -36,7 +37,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.users.observe(viewLifecycleOwner, {users ->
-            userAdapter = UserAdapter(users)
+            userAdapter = UserAdapter(users, navigationService)
             binding.recyclerView.adapter = userAdapter
             userAdapter.notifyDataSetChanged()
         })
