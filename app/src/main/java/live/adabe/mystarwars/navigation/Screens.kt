@@ -13,8 +13,8 @@ class Screens {
         }
     }
 
-    class DetailsScreen(private val bundle: Bundle?): SupportAppScreen() {
-        override fun getFragment(): Fragment{
+    class DetailsScreen(private val bundle: Bundle?) : SupportAppScreen() {
+        override fun getFragment(): Fragment {
             val fragment = DetailsFragment()
             fragment.arguments = bundle
             return fragment

@@ -1,7 +1,7 @@
 package live.adabe.mystarwars
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import live.adabe.mystarwars.databinding.ActivityMainBinding
 import live.adabe.mystarwars.navigation.NavigationService

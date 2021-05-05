@@ -16,7 +16,7 @@ class HomeViewModel @Inject constructor(private val userRepository: UserReposito
     val users: LiveData<List<User>> = _users
 
     init {
-        viewModelScope.launch{
+        viewModelScope.launch {
             _users.postValue(userRepository.getUsers())
         }
     }

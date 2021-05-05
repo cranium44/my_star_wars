@@ -1,6 +1,5 @@
 package live.adabe.mystarwars.network
 
-import androidx.lifecycle.LiveData
 import live.adabe.mystarwars.model.ApiResponse
 import retrofit2.http.GET
 

@@ -1,11 +1,10 @@
 package live.adabe.mystarwars.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import live.adabe.mystarwars.R
+import androidx.fragment.app.Fragment
 import live.adabe.mystarwars.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
@@ -18,7 +17,7 @@ class DetailsFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
-        arguments?.let{bundle ->
+        arguments?.let { bundle ->
             binding.apply {
                 nameDisplay.text = bundle.getString(Constants.NAME)
                 genderDisplay.text = bundle.getString(Constants.GENDER)

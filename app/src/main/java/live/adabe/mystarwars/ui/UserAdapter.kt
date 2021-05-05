@@ -4,16 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dagger.hilt.android.AndroidEntryPoint
 import live.adabe.mystarwars.databinding.UserItemBinding
 import live.adabe.mystarwars.model.User
 import live.adabe.mystarwars.navigation.NavigationService
-import javax.inject.Inject
 
-class UserAdapter(private val data: List<User>, private val navigationService: NavigationService): RecyclerView.Adapter<UserAdapter.Holder>() {
+class UserAdapter(private val data: List<User>, private val navigationService: NavigationService) :
+    RecyclerView.Adapter<UserAdapter.Holder>() {
 
-    class Holder(private val binding: UserItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(user: User){
+    class Holder(private val binding: UserItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(user: User) {
             binding.apply {
                 userName.text = user.name
             }
@@ -24,7 +23,7 @@ class UserAdapter(private val data: List<User>, private val navigationService: N
         val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding).listen { position, _ ->
             val user = data[position]
-            with(Bundle()){
+            with(Bundle()) {
                 putString(Constants.NAME, user.name)
                 putString(Constants.GENDER, user.gender)
                 putString(Constants.HEIGHT, user.height)
