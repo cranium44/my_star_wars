@@ -6,4 +6,6 @@
     <string name="gender">Gender:</string>
     <string name="height">Height:</string>
     <string name="image">image</string>
+    <string name="cm">cm</string>
+    <string name="awesome_characters_from_star_wars">Awesome characters from Star Wars!!</string>
 </resources>

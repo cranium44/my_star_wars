@@ -18,7 +18,7 @@ class NavigationServiceImpl(cicerone: Cicerone<Router>): NavigationService {
     private val navigationHolder = cicerone.navigatorHolder
 
     override fun openHomeScreen() {
-        navigateTo(Screens.HomeScreen())
+        newRootScreen(Screens.HomeScreen())
     }
 
     override fun openDetailsScreen(bundle: Bundle?) {

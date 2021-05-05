@@ -24,6 +24,7 @@ class DetailsFragment : Fragment() {
                 genderDisplay.text = bundle.getString(Constants.GENDER)
                 heightDisplay.text = bundle.getString(Constants.HEIGHT)
             }
+            requireActivity().title = "Details for: ${bundle.getString(Constants.NAME)}"
         }
         return binding.root
     }

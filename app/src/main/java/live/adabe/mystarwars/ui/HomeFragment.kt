@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import live.adabe.mystarwars.R
 import live.adabe.mystarwars.databinding.HomeFragmentBinding
 import live.adabe.mystarwars.navigation.NavigationService
 import javax.inject.Inject
@@ -41,6 +42,7 @@ class HomeFragment : Fragment() {
             binding.recyclerView.adapter = userAdapter
             userAdapter.notifyDataSetChanged()
         })
+        requireActivity().title = requireContext().getString(R.string.app_name)
     }
 
 }
